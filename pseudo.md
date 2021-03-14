@@ -17,18 +17,7 @@ var questionNumber = 0;
 // var dEl=document.getElementById("buttonD");
 var questionText=document.getElementById("askQuestion"); 
 var answerEl=document.createElement("h2")
-var questions =[
-    q1={ 
-        question: "what is 2+2",
-        answers: ["4" , "2", "77", "3"],
-        correctAnswer: "4",
-    },
-    q2={
-        question: "what is 5+5",
-        answers: ["2", "10", "55", "11"],
-        correctAnswer: "10",
-    }
-]
+
 function quiz () {
 for (var i=0 ; i<questions.length; i++) {
     questionText.textContent=(questions[i].question);
