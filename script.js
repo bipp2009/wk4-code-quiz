@@ -1,6 +1,6 @@
 //Get everything in here from the html
 var startScreen = document.getElementById("start-screen");
-var startbuttonquiz = document.getElementById("Start-button")
+var startbuttonquiz = document.getElementById("start-button")
 var question = document.getElementById("question")
 var answer = document.getElementById("answers")
 
@@ -27,3 +27,14 @@ var questions =[
     }
 ]
 //Write a function for the button being clicked to start the quiz
+function startgame(){
+    alert("Working")
+}
+
+
+
+
+
+
+startbuttonquiz.addEventListener("click", startgame)
+
