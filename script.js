@@ -3,7 +3,7 @@ var startScreen = document.getElementById("start-screen");
 var startbuttonquiz = document.getElementById("start-button")
 var question = document.getElementById("question")
 var answer = document.getElementById("answers")
-
+var timer = 60;
 //Create an array of objects which will contain our questions
 var questions =[
     { 
@@ -27,29 +27,69 @@ var questions =[
         correctAnswer: "2"
     }
 ]
+
+currentQuestionIndex = 0; 
+
 //Write a function for the button being clicked to start the quiz
 function startgame(){
     //hide the start screen
+    startScreen.setAttribute("class", "hide")
     //start the timer
     //start asking questions - using another function
+    startQuestions();
+    startTimer();
 }
+function startTimer() {
+
+   
+    setInterval(function() {
+        document.getElementById('timer').innerHTML = timer + ' seconds remaining';
+        timer--; 
+    }, 1000);
+
+   
+    }
 
 function startQuestions(){
+    var currentQuestion = questions[currentQuestionIndex];
     //Need to display a question from the variable above
+    question.textContent = currentQuestion.question
     //createa  loop which will create buttons for each possible answer
-        //add event listeners to each of the buttons as we create them
+    //add event listeners to each of the buttons as we create them
+    answer.innerHTML = "";
+    for(var i = 0; i < currentQuestion.answers.length; i++){
+        var answerButton = document.createElement("button");
+        answerButton.textContent = currentQuestion.answers[i];
+        answerButton.addEventListener("click", checkAnswer)
+        answer.appendChild(answerButton)
+    }; 
+    
 }
 
 function checkAnswer(){
     //This will be triggered when any of the answers are selected
     //Check the answer against the correct answer
+    if (this.textContent === questions[currentQuestionIndex].correctAnswer){
+        alert("correct")
+    } else {
+        timer= timer-5;
+            alert("Wrong 5 seconds deducted")
+    }
     //conditional where we deduct time for incorrect
     //conditional where we check if they have time remaining and if they do show next question
+    if(currentQuestionIndex === questions.length) {
+        endQuiz()
+    } else {
+        currentQuestionIndex++
+       
+        startQuestions();
+    }
     //if out of time - end quiz function called
 }
 
 function endQuiz(){
-    //hide the questions 
+  
+    //hide the questions screen
     //show highscores from local storage, input box for initials and submit score button (event listener)
 }
 
