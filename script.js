@@ -24,13 +24,38 @@ var questions =[
     {
         question: "what is 5-3?",
         answers: ["2","7","4","1"],
+        correctAnswer: "2"
     }
 ]
 //Write a function for the button being clicked to start the quiz
 function startgame(){
-    alert("Working")
+    //hide the start screen
+    //start the timer
+    //start asking questions - using another function
 }
 
+function startQuestions(){
+    //Need to display a question from the variable above
+    //createa  loop which will create buttons for each possible answer
+        //add event listeners to each of the buttons as we create them
+}
+
+function checkAnswer(){
+    //This will be triggered when any of the answers are selected
+    //Check the answer against the correct answer
+    //conditional where we deduct time for incorrect
+    //conditional where we check if they have time remaining and if they do show next question
+    //if out of time - end quiz function called
+}
+
+function endQuiz(){
+    //hide the questions 
+    //show highscores from local storage, input box for initials and submit score button (event listener)
+}
+
+function saveHighscre(){
+    //function thats called when they submit their score and saves everything to local storage
+}
 
 
 
