@@ -4,6 +4,7 @@ var startbuttonquiz = document.getElementById("start-button")
 var question = document.getElementById("question")
 var answer = document.getElementById("answers")
 var timer = 60;
+var interval;
 //Create an array of objects which will contain our questions
 var questions =[
     { 
@@ -42,9 +43,15 @@ function startgame(){
 function startTimer() {
 
    
-    setInterval(function() {
+    interval = setInterval(function() {
         document.getElementById('timer').innerHTML = timer + ' seconds remaining';
-        timer--; 
+        
+        if (timer > 0) {
+            timer --;
+        } else {
+            endQuiz();
+        }
+
     }, 1000);
 
    
@@ -85,10 +92,15 @@ function checkAnswer(){
         startQuestions();
     }
     //if out of time - end quiz function called
+    //document.addEventListener("keydown", function(event) {
+    // If the timercount is zero, exit function
+        if (timerCount === 0) {}
+          return;
 }
 
 function endQuiz(){
-  
+    clearInterval(interval)
+    if(currentQuestionIndex =)
     //hide the questions screen
     //show highscores from local storage, input box for initials and submit score button (event listener)
 }
