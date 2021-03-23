@@ -1,4 +1,17 @@
+body {
+    align-content: center;
+}
+
 .hide {
     display: none;
-    
+}
+
+.welcomeMessage {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20;
+}
+
+.startQuiz {
+    width: 35%;
+    height: 35%;
 }
