@@ -95,11 +95,31 @@ function endQuiz() {
   questionScreen.setAttribute("class", "hide");
   endScreen.removeAttribute("class");
 
+
+  var submit = document.getElementById("submit-score");
+    submit.addEventListener("click", saveHighscre);
   //show highscores from local storage, input box for initials and submit score button (event listener)
 }
 
 function saveHighscre() {
   //function thats called when they submit their score and saves everything to local storage
+  var usersInitials = document.getElementById("initials").value;
+  var highscoreObject = {
+      user: usersInitials,
+      score: userScore
+  }
+
+  var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+  highscores.push(highscoreObject);
+  window.localStorage.setItem("highscores", JSON.stringify(highscores)); 
+
+  var highscoresList = document.getElementById("highscores-display");
+  for (var i = 0; i < highscores.length; i++){
+      var listEntry = document.createElement("li");
+      listEntry.textContent = highscores[i].user + ":" + highscores[i].score;
+      highscoresList.appendChild(listEntry)
+  }
+
 }
 
 startbuttonquiz.addEventListener("click", startgame);
