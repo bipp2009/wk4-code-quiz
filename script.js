@@ -77,9 +77,9 @@ function checkAnswer() {
     userScore++;
   } else {
     timer = timer - 5;
-    alert("Wrong 5 seconds deducted");
+    alert("Wrong answer 5 seconds deducted");
   }
-  //conditional where we deduct time for incorrect
+  //conditional where we deduct time for incorrect answers
   //conditional where we check if they have time remaining and if they do show next question
   currentQuestionIndex++;
   if (currentQuestionIndex === questions.length) {
