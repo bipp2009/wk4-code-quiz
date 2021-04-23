@@ -1,5 +1,6 @@
 body {
     align-content: center;
+    background: yellow;
 }
 
 .hide {
@@ -15,4 +16,14 @@ body {
     width: 35%;
     height: 35%;
     color: blue;
+}
+
+#question-screen {
+    text-align: center;
+    color: rgb(18, 18, 168);
+}
+
+button {
+    width: 100%;
+background-color: rgb(220, 220, 252);
 }
