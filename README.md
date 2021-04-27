@@ -11,6 +11,12 @@ This application is a basic code quiz built using JavaScript, HTML and CSS.
 
 You can find the deployed application at https://bipp2009.github.io/wk4-code-quiz/
 
+## Screenshot
+
+![codequiz] (/images/codequiz.png)
+
+
+
 
 
 
